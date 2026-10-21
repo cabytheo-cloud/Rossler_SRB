@@ -1,0 +1,144 @@
+Kv 0.4.62,  Taylor order 20
+a, b in [0.19999999999999998, 0.20000000000000001]
+J = [cL, cR] with cL = 5.70005464309744258599721433711238205432891845703125
+                   cR = 5.70005464311744258765202175709418952465057373046875
+CHECK  statement: cL, cR are the doubles whose exact expansions are printed in the paper : true
+N = 25,  S = sm +- Delta, sm = 0.00059741814151543799, Delta = 9.9999999999999994e-12
+
+=== (a) Fixed point (Krawczyk), dp/dc, saddle ===
+  [run Krawczyk P(q0): 1 revolution(s), state dim 3, 46 steps, 1.2 s]
+  [run Krawczyk DP(Q): 1 revolution(s), state dim 7, 63 steps, 5.8 s]
+    Q = ([-8.3810067427504524, -8.381006682750451], [0.029589817375831579, 0.029589819375831584])
+    K = ([-8.3810067127623835, -8.3810067127385217], [0.029589818375761075, 0.029589818375902091])
+CHECK  Krawczyk: unique fixed point p_c of P_c in Q, all c in J                   : true
+  [run Krawczyk P(q0): 1 revolution(s), state dim 3, 46 steps, 1.1 s]
+  [run Krawczyk DP(Q): 1 revolution(s), state dim 7, 74 steps, 10.0 s]
+    Q = ([-8.3810067127485635, -8.3810067127285617], [0.029589818365875913, 0.029589818385875915])
+    K = ([-8.3810067127386034, -8.3810067127385235], [0.029589818375875626, 0.029589818375876202])
+CHECK  Krawczyk: fixed point at c = cL                                            : true
+  [run Krawczyk P(q0): 1 revolution(s), state dim 3, 46 steps, 1.0 s]
+  [run Krawczyk DP(Q): 1 revolution(s), state dim 7, 74 steps, 7.1 s]
+    Q = ([-8.3810067127604526, -8.3810067127404508], [0.029589818365831581, 0.029589818385831582])
+    K = ([-8.3810067127504926, -8.3810067127504109], [0.02958981837583129, 0.029589818375831876])
+CHECK  Krawczyk: fixed point at c = cmid                                          : true
+  [run Krawczyk P(q0): 1 revolution(s), state dim 3, 50 steps, 1.1 s]
+  [run Krawczyk DP(Q): 1 revolution(s), state dim 7, 71 steps, 6.7 s]
+    Q = ([-8.3810067127723418, -8.38100671275234], [0.029589818365787248, 0.02958981838578725])
+    K = ([-8.3810067127623871, -8.3810067127623], [0.029589818375787065, 0.02958981837578744])
+CHECK  Krawczyk: fixed point at c = cR                                            : true
+CHECK  cL, cmid, cR lie in J                                                      : true
+CHECK  K_L, K_mid, K_R lie in Q_J (same fixed-point branch)                       : true
+CHECK  statement: box Q_K lies in the Krawczyk box (uniqueness)                   : true
+CHECK  statement: K_J lies in the box Q (location of p_c)                         : true
+p_c (c in J)  in ([-8.3810067127623835, -8.3810067127385217], [0.029589818375761075, 0.029589818375902091])
+p_cL          in ([-8.3810067127386034, -8.3810067127385235], [0.029589818375875626, 0.029589818375876202])
+p_cmid        in ([-8.3810067127504926, -8.3810067127504109], [0.02958981837583129, 0.029589818375831876])
+p_cR          in ([-8.3810067127623871, -8.3810067127623], [0.029589818375787065, 0.02958981837578744])
+  [run dp/dc: 1 revolution(s), state dim 9, 98 steps, 16.1 s]
+dp/dc         in ([-1.1889857687079182, -1.1889857686924388], [-0.0044333645371213929, -0.0044333645368962969])
+p_c - PH - DPH (c - cmid) in ([-4.0856207383623844e-14, 4.0856207383623844e-14], [-2.9143354508960966e-16, 2.9490299204156327e-16])
+  [run Df(0) on K_J x J: 1 revolution(s), state dim 7, 70 steps, 6.5 s]
+Df_c(0) in local coordinates:
+  [[[-2.4039731264257753, -2.4039731263975535], [-1.0742719142239753e-10, -8.6228146564268052e-11]],
+   [[-1.1243404492146519e-14, 1.1246006577360485e-14], [-1.2816851674406648e-14, -1.2816851652096188e-14]]]
+trace in [-2.4039731264257882, -2.4039731263975659]   det in [3.0811366935455461e-14, 3.0811366991866917e-14]
+chi(1) in [3.4039731263975965, 3.4039731264258193]   chi(-1) in [-1.4039731264257576, -1.403973126397535]
+CHECK  saddle: chi(1) > 0 > chi(-1)  (lambda_u < -1 < lambda_s < 1)               : true
+CHECK  dissipative: |det Df_c(0)| < 1                                             : true
+lambda_u in [-2.4039731264258104, -2.4039731263975437]
+CHECK  statement: lambda_u in the stated range                                    : true
+CHECK  statement: |lambda_u lambda_s| = |det| < stated bound                      : true
+lambda_s in [-1.2816851675059676e-14, -1.2816851651443276e-14]   rho = log(1/|lambda_s|)/log|lambda_u| in [36.469253985721402, 36.469253988310349]
+no resonance of order < 1229030  (first q with an integer in q*rho: 32801)
+CHECK  statement: no resonance of order <= 10^3 (Sternberg condition)             : true
+  (det > 0: true; with lambda_u < -1 this gives lambda_s = det/lambda_u in (-1, 0))
+  [run Df(0) at cL: 1 revolution(s), state dim 7, 74 steps, 6.9 s]
+  [run Df(0) at cR: 1 revolution(s), state dim 7, 70 steps, 6.2 s]
+  elapsed 69.639152788000004 s
+
+=== (b) W^u_loc: Lemma 4.2 on B_u = [-0.00069999999999999999,0.00069999999999999999] x [-1.0000000000000001e-05,1.0000000000000001e-05], c in J ===
+  [run W^u box: 1 revolution(s), state dim 15, 50 steps, 19.9 s]
+    a = [[[-2.4045139798224633, -2.4034322730008744], [-0.00014325639677192315, 0.00014325620311437729]],
+         [[-1.1946686813026724e-06, 1.1946686813213206e-06], [-6.8098757121962168e-08, 6.8098731487850277e-08]]]
+    h^1 (11,12,22) = [-0.73669892102823065, -0.73492673577858292], [0.16414595727791084, 0.16500312238349726], [1.6312673250558574, 1.6329025388603304]
+    h^2 (11,12,22) = [-0.0002278920356345923, -0.00021907456025307311], [-4.59877948328716e-07, 4.5987778171538371e-07], [-1.0318642115776203e-06, 1.0318641633824484e-06]
+    f_c = ([-0.00026596980686984499, 0.00026596980688155388], [-1.1170595230769897e-06, 1.117059523082805e-06])
+W^u bounds: L = 5.2192116702078106e-07  K = 4.1509458568791865e-05  M = 1.1730514084715032e-06
+    Phi1 in [-2.4045139798972319, -2.4034322729261057],  Psi1/Phi1 in [-4.9706776859122004e-07, 4.9706776858346101e-07]
+    w'' image in [-3.9532817675039867e-05, -3.7810756647973673e-05],  dw/dc image in [-1.1171918080622809e-06, 1.1171918080680983e-06]
+    theta in [6.8169965259441983e-08, 6.8169965259442022e-08]
+CHECK  (U1) mig Phi1 > 1                                                          : true
+CHECK  (U2) L delta <= rho                                                        : true
+CHECK  (U2) mag a21 delta + mag a22 rho <= rho                                    : true
+CHECK  (U3) Psi1/Phi1 in [-L,L]                                                   : true
+CHECK  (U4) (Psi2 Phi1 - Psi1 Phi2)/Phi1^3 in [-K,K]                              : true
+CHECK  (U5) dw/dc image in [-M,M]                                                 : true
+CHECK  (U6) 1 - mag a12 L/m > 0 and theta < 1                                     : true
+|w_c'(0)| <= t0 = 4.67809163666198e-15 (c in J),  2.4579068830185545e-15 (c = cL),  2.458888933784265e-15 (c = cR)
+CHECK  Lemma 4.2(c): slope enclosures consistent (|t| <= L)                       : true
+  elapsed 89.566989622999998 s
+
+=== (c) W^s_loc: Lemma 4.3 on B_s = [-9.9999999999999995e-07,9.9999999999999995e-07] x [-9.9999999999999995e-07,9.9999999999999995e-07], c in J ===
+  [run W^s box: 1 revolution(s), state dim 15, 64 steps, 29.9 s]
+    a = [[[-2.4039740269110368, -2.4039722259123106], [-1.7968527066423494e-06, 1.7966590462960437e-06]],
+         [[-2.2355729433919539e-10, 2.2355729260447192e-10], [-6.5026350315203198e-14, 3.9392646987775363e-14]]]
+    h^1 (11,12,22) = [-0.73581455619613056, -0.73581110061067412], [0.16457290333610411, 0.1645761763253081], [1.6320807412651603, 1.6320891226510443]
+    h^2 (11,12,22) = [-0.0002234836034999219, -0.00022348299238774286], [-1.8254028771333452e-10, 1.823736763326096e-10], [-1.5194272519595752e-10, 1.5189454585349748e-10]
+    f_c = ([-9.9855531259814667e-07, 9.9855531541969833e-07], [-5.8023202196117717e-10, 5.8023203298136905e-10])
+W^s bounds: Ls = 7.8482411139265143e-07  Ks = 0.71285924963628544  Ms = 7.743756375815494e-07
+    D in [-2.4039740269110372, -2.4039722259123102],  Sigma1 in [-7.4745152513585843e-07, 7.4737096665676368e-07]
+    sigma'' image in [0.67890937130316942, 0.6789135710821671],  dsigma/dc image in [-7.3750059652300978e-07, 7.3750059769671369e-07]
+CHECK  (S1) mag a21 ru + mag a22 rs <= rs                                         : true
+CHECK  (S2) mig D > 1                                                             : true
+CHECK  (S3) n = mig a11 - Ls mag a21 > 0 and (mag a12 + Ls mag a22) rs <= n ru    : true
+CHECK  (S4) Sigma1 in [-Ls,Ls]                                                    : true
+CHECK  (S5) sigma'' image in [-Ks,Ks]                                             : true
+CHECK  (S6) dsigma/dc image in [-Ms,Ms]                                           : true
+CHECK  (S7) mag a21 Ls + mag a22 < 1                                              : true
+  elapsed 119.43002851200001 s
+
+=== (d) Tangency function g(s,c) = U - sigma_c(V), N = 25 ===
+CHECK  S inside the W^u_loc domain: 0 < sm - Delta, sm + Delta <= delta_u         : true
+  [run (C) at (sm, cL): 25 revolution(s), state dim 5, 1205 steps, 62.2 s]
+c = cL, s = sm:  U in [-2.0884603416049586e-07, -1.6210751472204722e-07]  V in [-1.4565116710341542e-09, 1.4565442103920095e-09]
+    g in [-2.0884603530362689e-07, -1.621075135789162e-07]
+    g_s in [1.3703711356174253, 1.4599690124796108]
+  [run (C) at (sm, cR): 25 revolution(s), state dim 3, 1159 steps, 26.3 s]
+c = cR, s = sm:  U in [1.800707655872073e-07, 1.9246761137353056e-07]  V in [1.5888621869751518e-14, 1.6656338005695495e-14]
+    g in [1.8007076558719423e-07, 1.9246761137354364e-07]
+  [run (B) s = sm - Delta, c in J: 25 revolution(s), state dim 5, 1206 steps, 61.3 s]
+(B) s = sm - Delta, c in J:  U in [-2.0576636533789568e-07, 2.0745908508402741e-07]  V in [-1.8596405069973064e-10, 1.8599658236392577e-10]
+    g_s in [4.576921189966626, 4.670287827974736]
+  [run (B) s = sm + Delta, c in J: 25 revolution(s), state dim 5, 1201 steps, 59.6 s]
+(B) s = sm + Delta, c in J:  U in [-2.1051122601795821e-07, 2.1182111951154306e-07]  V in [-1.8596418060172864e-09, 1.8596743345567826e-09]
+    g_s in [-1.8422478918118088, -1.7496736653577329]
+  [run (A) on S x J: 25 revolution(s), state dim 9, 1577 steps, 261.5 s]
+(A) on S x J:  U in [-2.533422956249178e-05, 2.5336021559286111e-05]  V in [-3.2068354481666886e-07, 3.2068357733735119e-07]
+    (U_s, V_s) in ([-1.860757759275196, 4.6897107340126931], [-0.00070750781785800475, 0.00070750781765583357])
+    (U_ss, V_ss) in ([-321014745789.97595, -321009382781.31213], [-119342.16414275137, 119342.20987077919])
+    g_ss in [-321014745790.0697, -321009382781.21838]
+  [run (D) on S x J: 25 revolution(s), state dim 9, 1594 steps, 251.5 s]
+(D) on S x J:  U in [-1.2010153160419906e-05, 1.2012585111133912e-05]  V in [-7.3539896193889708e-08, 7.3539928736342892e-08]
+    E^{-1}D_N e_u in ([-1.858147246673687, 4.6864551129201084], [-0.00013999893211018386, 0.00013999893187309335])
+    E^{-1}D_N e_s in ([-0.00020366287359530386, 8.7892374768203536e-05], [-7.9863302661341887e-08, 7.9863302671046648e-08])
+    (U_c, V_c) in ([18610.531754901924, 18610.647588755448], [-0.0013787339267040866, 0.0013787308057694554])
+    g_c in [18610.531754126463, 18610.647589530909]
+
+--- Lemma 4.5 ---
+CHECK  chart: |V| <= rs on S x J (from run A) and (from run D)                    : true
+CHECK  chart: |V| <= rs at the S endpoints x J and at (sm,cL), (sm,cR)            : true
+CHECK  (A) d^2g/ds^2 < 0 on S x J                                                 : true
+CHECK  (B) dg/ds(sm - Delta, c) > 0 for all c in J                                : true
+CHECK  (B) dg/ds(sm + Delta, c) < 0 for all c in J                                : true
+gamma = min|g_ss| >= 321009382781.21838;  sup_S g(., cL) <= g(sm,cL) + g_s(sm,cL)^2/(2 gamma) <= -1.6210419356767705e-07
+CHECK  (C) g(s,cL) < 0 for all s in S  (Taylor bound, Remark 4.6)                 : true
+CHECK  (C) g(sm,cR) > 0                                                           : true
+CHECK  (D) dg/dc > 0 on S x J                                                     : true
+
+Summary of key enclosures:
+  g(sm,cL) in [-2.0884603530362689e-07, -1.621075135789162e-07],  g(sm,cR) in [1.8007076558719423e-07, 1.9246761137354364e-07]
+  g_s(sm-Delta,J) in [4.576921189966626, 4.670287827974736],  g_s(sm+Delta,J) in [-1.8422478918118088, -1.7496736653577329]
+  g_ss(S x J) in [-321014745790.0697, -321009382781.21838],  g_c(S x J) in [18610.531754126463, 18610.647589530909]
+
+checks: 38, failed: 0,  total time 841.81491937999999 s
+ALL CHECKS PASSED: true

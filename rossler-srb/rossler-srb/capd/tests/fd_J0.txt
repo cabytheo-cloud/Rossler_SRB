@@ -1,0 +1,41 @@
+N = 15, c = 4.506989346e+00, base point X0 (fold) = (-6.938161910e+00, 3.606390712e-02)
+  D P^N[e_u]_0: computeDP  -2.957646699e-04  FD  -2.946087818e-04  (h=1.000000000e-08)  rel.diff 3.908134404e-03  rel.noise 5.993427999e+01  [not resolved]
+  D P^N[e_u]_1: computeDP  -2.305492953e-07  FD  -2.300243329e-07  (h=1.000000000e-08)  rel.diff 2.277006956e-03  rel.noise 7.688786260e+04  [not resolved]
+  D P^N[e_s]_0: computeDP   3.985868528e-09  FD   0.000000000e+00  (h=1.000000000e-09)  rel.diff 1.000000000e+00  rel.noise 4.447322437e+07  [not resolved]
+  D P^N[e_s]_1: computeDP   3.106761710e-12  FD   0.000000000e+00  (h=1.000000000e-06)  rel.diff 1.000000000e+00  rel.noise 5.705761880e+07  [not resolved]
+  D P^N[c]_0: computeDP   4.883319519e-01  FD   4.883324856e-01  (h=1.000000000e-09)  rel.diff 1.092878688e-06  rel.noise 3.629998502e-01  [not resolved]
+  D P^N[c]_1: computeDP  -5.306939101e-03  FD  -5.306938222e-03  (h=1.000000000e-08)  rel.diff 1.656043317e-07  rel.noise 3.340238544e+00  [not resolved]
+  D2P^N[e_u,e_u]_0: computeDP  -2.232388008e+07  FD  -2.232388001e+07  (h=1.000000000e-07)  rel.diff 3.239780925e-09  rel.noise 7.940574161e-04
+  D2P^N[e_u,e_u]_1: computeDP  -1.740151994e+04  FD  -1.740151963e+04  (h=1.000000000e-07)  rel.diff 1.733888609e-08  rel.noise 1.018672082e+00  [not resolved]
+  D2P^N[e_u,e_s]_0: computeDP   3.009221694e+02  FD   3.009010818e+02  (h=1.000000000e-06)  rel.diff 7.007655471e-05  rel.noise 5.890706747e-01  [not resolved]
+  D2P^N[e_u,e_s]_1: computeDP   2.345695779e-01  FD   2.345519612e-01  (h=1.000000000e-06)  rel.diff 7.510248392e-05  rel.noise 7.557008326e+02  [not resolved]
+  D2P^N[e_u,c]_0: computeDP  -2.735772729e+07  FD  -2.735772719e+07  (h=1.000000000e-07)  rel.diff 3.438851960e-09  rel.noise 6.479501147e-04
+  D2P^N[e_u,c]_1: computeDP  -2.132541633e+04  FD  -2.132541626e+04  (h=1.000000000e-07)  rel.diff 3.222291363e-09  rel.noise 8.312354734e-01  [not resolved]
+  D2P^N[e_s,e_s]_0: computeDP  -4.329182208e-03  FD  -5.995204333e-03  (h=1.000000000e-06)  rel.diff 3.848352981e-01  rel.noise 4.094639977e+04  [not resolved]
+  D2P^N[e_s,e_s]_1: computeDP  -3.374540029e-06  FD  -4.874572967e-06  (h=1.000000000e-05)  rel.diff 4.445147860e-01  rel.noise 5.252995189e+05  [not resolved]
+  D2P^N[e_s,c]_0: computeDP   3.687776981e+02  FD   3.687681271e+02  (h=1.000000000e-06)  rel.diff 2.595304820e-05  rel.noise 4.806809802e-01  [not resolved]
+  D2P^N[e_s,c]_1: computeDP   2.874631311e-01  FD   2.874575578e-01  (h=1.000000000e-06)  rel.diff 1.938787049e-05  rel.noise 6.166509935e+02  [not resolved]
+  D2P^N[c,c]_0: computeDP  -3.352666323e+07  FD  -3.352666254e+07  (h=1.000000000e-07)  rel.diff 2.087177884e-08  rel.noise 5.287267156e-04
+  D2P^N[c,c]_1: computeDP  -2.613411586e+04  FD  -2.613411466e+04  (h=1.000000000e-07)  rel.diff 4.591842423e-08  rel.noise 6.782874396e-01  [not resolved]
+N = 15, c = 4.506989346e+00, base point X1 (off fold) = (-6.938430320e+00, 3.606369789e-02)
+  D P^N[e_u]_0: computeDP   6.190685644e+03  FD   6.190685528e+03  (h=1.000000000e-08)  rel.diff 1.874797312e-08  rel.noise 9.667757073e-05
+  D P^N[e_u]_1: computeDP   4.461022252e+00  FD   4.461022169e+00  (h=1.000000000e-08)  rel.diff 1.866431598e-08  rel.noise 1.341621752e-01  [not resolved]
+  D P^N[e_s]_0: computeDP  -4.181361134e-02  FD  -4.181333741e-02  (h=1.000000000e-05)  rel.diff 6.551187429e-06  rel.noise 1.431353165e-02  [not resolved]
+  D P^N[e_s]_1: computeDP  -3.013098408e-05  FD  -3.013078780e-05  (h=1.000000000e-05)  rel.diff 6.514342328e-06  rel.noise 1.986328915e+01  [not resolved]
+  D P^N[c]_0: computeDP   7.581544875e+03  FD   7.581544700e+03  (h=1.000000000e-08)  rel.diff 2.306964372e-08  rel.noise 7.894175384e-05
+  D P^N[c]_1: computeDP   5.457852640e+00  FD   5.457852514e+00  (h=1.000000000e-08)  rel.diff 2.321154890e-08  rel.noise 1.096585944e-01  [not resolved]
+  D2P^N[e_u,e_u]_0: computeDP  -1.600976115e+06  FD  -1.600818034e+06  (h=1.000000000e-07)  rel.diff 9.874072997e-05  rel.noise 3.738347146e-01  [not resolved]
+  D2P^N[e_u,e_u]_1: computeDP   1.156984280e+03  FD   1.157095426e+03  (h=1.000000000e-07)  rel.diff 9.606598171e-05  rel.noise 5.172935015e+02  [not resolved]
+  D2P^N[e_u,e_s]_0: computeDP  -1.446375223e+02  FD  -1.447631726e+02  (h=1.000000000e-05)  rel.diff 8.687255072e-04  rel.noise 4.137933503e-01  [not resolved]
+  D2P^N[e_u,e_s]_1: computeDP  -1.198329102e-01  FD  -1.198359294e-01  (h=1.000000000e-05)  rel.diff 2.519444934e-05  rel.noise 4.994458100e+02  [not resolved]
+  D2P^N[e_u,c]_0: computeDP  -1.934862145e+06  FD  -1.934715210e+06  (h=1.000000000e-07)  rel.diff 7.594087068e-05  rel.noise 3.093245948e-01  [not resolved]
+  D2P^N[e_u,c]_1: computeDP   1.433830634e+03  FD   1.433932487e+03  (h=1.000000000e-07)  rel.diff 7.103552862e-05  rel.noise 4.174136297e+02  [not resolved]
+  D2P^N[e_s,e_s]_0: computeDP   5.710907553e+03  FD   5.710900179e+03  (h=1.000000000e-05)  rel.diff 1.291134189e-06  rel.noise 1.047995338e-02  [not resolved]
+  D2P^N[e_s,e_s]_1: computeDP   4.115293165e+00  FD   4.115288041e+00  (h=1.000000000e-05)  rel.diff 1.245248248e-06  rel.noise 1.454332474e+01  [not resolved]
+  D2P^N[e_s,c]_0: computeDP  -2.486969748e+03  FD  -2.489134898e+03  (h=1.000000000e-06)  rel.diff 8.705976974e-04  rel.noise 2.406544952e+00  [not resolved]
+  D2P^N[e_s,c]_1: computeDP  -1.811217847e+00  FD  -1.812775624e+00  (h=1.000000000e-06)  rel.diff 8.600716264e-04  rel.noise 3.304408965e+03  [not resolved]
+  D2P^N[c,c]_0: computeDP  -2.338182063e+06  FD  -2.337844873e+06  (h=1.000000000e-07)  rel.diff 1.442104057e-04  rel.noise 2.559682835e-01  [not resolved]
+  D2P^N[c,c]_1: computeDP   1.776519341e+03  FD   1.776756520e+03  (h=1.000000000e-07)  rel.diff 1.335074931e-04  rel.noise 3.368949807e+02  [not resolved]
+largest relative difference over all resolved entries (value > 100 x noise): 2.306964372e-08
+(rel.noise = (width of the point enclosures of P^N)/h^k, relative to the value; the truncation error of the
+ finite differences is not estimated, so very large higher derivatives can also cause disagreement)

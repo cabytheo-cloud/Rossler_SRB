@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying paper and this archive."
+title: "Existence of SRB measures for some Rössler systems: code and logs of the computer-assisted proofs"
+version: "1.2.0"
+date-released: "2026-10-21"
+repository-code: "https://github.com/cabytheo-cloud/Rossler_SRB"
+authors:
+  - family-names: Caby
+    given-names: Theophile
+    email: theophile.caby@univ-brest.fr
+    affiliation: "Laboratoire d'Océanographie Physique et Spatiale, Univ Brest, CNRS, Ifremer, IRD, Brest, France"
+keywords:
+  - Rössler system
+  - homoclinic tangency
+  - SRB measure
+  - computer-assisted proof
+  - interval arithmetic
+  - CAPD
+  - Kv
+  - Lean
+preferred-citation:
+  type: article
+  title: "Existence of SRB measures for some Rössler systems"
+  year: 2026
+  authors:
+    - family-names: Caby
+      given-names: Theophile

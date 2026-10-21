@@ -1,0 +1,71 @@
+a = b = 0.2,  J = [4.5069893363119702, 4.506989356311971],  N = 15,  S = 0.00053682155586 +- 1.0000000000000001e-09
+CHECK  Krawczyk: unique fixed point p_c of P_c in Q, all c in J       : true
+CHECK  Krawczyk: fixed point at c = cL                                : true
+CHECK  Krawczyk: fixed point at c = cR                                : true
+CHECK  Krawczyk: fixed point at c = cmid                              : true
+CHECK  cL, cmid, cR lie in J                                          : true
+CHECK  fixed points at cL, cmid, cR lie in the J-branch box           : true
+p_c (c in J)  in {[-6.9386987438294767, -6.9386987185535904],[0.036063488204946842, 0.036063489120087298]}
+p_cmid        in {[-6.9386987311916188, -6.9386987311914465],[0.03606348866251452, 0.036063488662519606]}
+dp/dc         in {[-1.2318430748810105, -1.231841601959083],[-0.0066478564028995477, -0.0066477821641612971]}
+Df(p) in local coords = {
+{[-1.9214716460772274, -1.9214701719441896],[-9.5007084333076364e-07, 9.5007059131013705e-07]},
+{[-2.0240301577120354e-08, 2.0240314919430983e-08],[-2.3548204735343811e-08, 2.3512450857252675e-08]}
+}
+trace = [-1.9214716696254324, -1.9214701484317387]   det = [-4.517852688172318e-08, 4.5247226944717704e-08]
+CHECK  saddle: chi(1) > 0 and chi(-1) < 0 (one eigenvalue < -1, one in (-1,1)) : true
+CHECK  dissipative saddle: |det DP(p_c)| < 1                          : true
+CHECK  statement: box Q_K lies in the Krawczyk box (uniqueness)       : true
+CHECK  statement: K_J lies in the box Q (location of p_c)             : true
+lambda_u in [-1.9214717187287345, -1.9214700993284366]
+CHECK  statement: lambda_u in the stated range                        : true
+CHECK  statement: |lambda_u lambda_s| = |det| < stated bound          : true
+W^u box: Df = [[[-1.9323222435745069, -1.9106308971648793], [-0.014281296681357469, 0.014284784115029536]], [[-0.00036729181240806812, 0.00036703426516570935], [-0.00042123759181826408, 0.00042127971029488659]]]
+W^u bounds: Lu = 0.00020189472113426213  Ku = 0.00094063642793957289  Mu = 0.0010915762840827653
+CHECK  W^u: 0 not in [a11] (so mig[a11] = min of endpoint moduli)     : true
+CHECK  W^u: expansion along graph  min|phi'| > 1                      : true
+CHECK  W^u: graph transform keeps |w'| <= Lu                          : true
+CHECK  W^u: graph transform keeps |w''| <= Ku                         : true
+CHECK  W^u: graph transform keeps |dw/dc| <= Mu                       : true
+CHECK  W^u: graph stays in box  |psi| <= rho                          : true
+CHECK  W^u: |w| <= Lu*delta_u <= rho                                  : true
+CHECK  W^u: graph transform is a C^0 contraction (theta < 1)          : true
+     contraction theta = [0.00042402639839509999, 0.0004240263983951002]
+W^s box: Df = [[[-1.9215314167988868, -1.9214104014250624], [-7.7791176305908039e-05, 7.7791242052205334e-05]], [[-1.5557219842816636e-06, 1.5557167742170616e-06], [-1.8245501060289784e-06, 1.8245156886810715e-06]]]
+W^s bounds: Ls = 4.2510900095935338e-05  Ks = 0.96905852068920573  Ms = 0.00021602058809264759
+CHECK  W^s: graph transform keeps |sigma'| <= Ls                      : true
+CHECK  W^s: graph transform keeps |sigma''| <= Ks                     : true
+CHECK  W^s: graph transform keeps |dsigma/dc| <= Ms                   : true
+CHECK  W^s: 0 not in [a11] (so mig[a11] = min of endpoint moduli)     : true
+CHECK  W^s: C^0 contraction  1/min|a11 - sigma' a21| < 1              : true
+CHECK  W^s: v-image stays in [-rs,rs]                                 : true
+CHECK  W^s: |h'| lower bound mA - Ls|a21| > 0                         : true
+CHECK  W^s: preimage root stays in [-ru,ru]                           : true
+CHECK  W^s: restricted map on graph contracts                         : true
+|w'(0)| <= 1.0533764960308039e-08 (J),  6.7266396082469361e-12 (cL),  6.7182510256916334e-12 (cR)
+c = cL:  g(smid) in [-1.7530056377988499e-08, -1.6882147041669481e-08]   g_s(smid) in [-5.9042430695544247e-05, 0.00011523791753098826]
+         g_ss on S in [-22330045.541191045, -22317727.106410783]   V on S in [-8.7388654960991567e-09, 8.7715105161657563e-09]
+         sup_S g(.,cL) <= -1.6882146744153125e-08
+CHECK  (C) g(s,cL) < 0 for all s in S                                 : true
+CHECK  (C) |V| <= rs at c = cL (tip inside W^s_loc chart)             : true
+c = cR:  g(smid) in [1.6881199166124226e-08, 1.7528057548442486e-08]   V in [1.6529829309388896e-12, 3.0993899688381208e-11]
+CHECK  (C) g(smid,cR) > 0                                             : true
+CHECK  (C) |V| <= rs at c = cR                                        : true
+g_s(smid - Delta, J) in [0.019088323720101358, 0.024968421910955121]
+g_s(smid + Delta, J) in [-0.025560269851469586, -0.019678456222703974]
+CHECK  (B) g_s(smid - Delta, c) > 0 for all c in J                    : true
+CHECK  (B) g_s(smid + Delta, c) < 0 for all c in J                    : true
+           D e_u in {[-0.12011825391865072, 0.11952733365946609],[-0.0024510257036314577, 0.0024505630062299087]}
+           D e_s in {[-0.19339723071425835, 0.19339723870066713],[-0.0039555694617679667, 0.0039555694675173329]}
+           (U_c,V_c) in {[1.4166875912421593, 2.024386268413469],[-0.010645721164446485, 0.010645720940399219]}
+on S x J:  g_ss in [-22338755.584030516, -22309018.238496318]
+           g_c  in [1.4164711180948775, 2.0246027415607513]
+           U in [-2.1644907905735634e-07, 2.1644756326311322e-07]   V in [-9.8774014161872201e-09, 9.9100463289645917e-09]
+CHECK  (A) d^2g/ds^2 < 0 on S x J (quadratic tangency)                : true
+CHECK  (D) dg/dc > 0 on S x J (generic unfolding)                     : true
+CHECK  tip stays in W^s_loc chart: |V| <= rs on S x J                 : true
+CHECK  S inside W^u_loc domain                                        : true
+|q_* - p| <= 9.9104676139540349e-09
+CHECK  statement: tangency point within the stated distance of p      : true
+
+ALL CHECKS PASSED: true
